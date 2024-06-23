@@ -21,28 +21,26 @@
       margin: 0;
       display: flex;
       flex-direction: column;
-      min-height: 100vh; /* Ensure the body takes up at least the full viewport height */
+      min-height: 100vh;
     }
 
     .container {
       max-width: 1200px;
       margin: 0 auto;
       padding: 20px;
-      flex: 1; /* Allow the container to grow to take up remaining space */
+      flex: 1;
     }
 
     header {
       background-color: #343a40;
       color: #fff;
-      padding: 10px 0;
+      padding: 20px 0;
       text-align: center;
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-      position: relative;
-      z-index: 2;
     }
 
     header h1 {
-      font-size: 2em;
+      font-size: 2.5em;
       margin-bottom: 10px;
     }
 
@@ -72,6 +70,12 @@
     #portfolio {
       background-color: #fff;
       padding: 40px 0;
+    }
+
+    #portfolio h2 {
+      text-align: center;
+      margin-bottom: 40px;
+      font-size: 2em;
     }
 
     .projects {
@@ -114,6 +118,12 @@
       background-color: #f8f9fa;
       padding: 40px 0;
       text-align: center;
+    }
+
+    #contact h2 {
+      text-align: center;
+      margin-bottom: 40px;
+      font-size: 2em;
     }
 
     #contact form {
@@ -159,10 +169,26 @@
       background-color: #343a40;
       color: #fff;
       text-align: center;
-      padding: 10px 0;
+      padding: 20px 0;
       width: 100%;
       box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
-      flex-shrink: 0; /* Prevent the footer from shrinking */
+      flex-shrink: 0;
+    }
+
+    footer .social-icons {
+      margin-bottom: 10px;
+    }
+
+    footer .social-icons a {
+      color: #fff;
+      margin: 0 10px;
+      text-decoration: none;
+      font-size: 1.5em;
+      transition: color 0.3s ease;
+    }
+
+    footer .social-icons a:hover {
+      color: #ffd700;
     }
 
     footer p {
@@ -180,7 +206,6 @@
         <li><a href="#portfolio">Portfolio</a></li>
         <li><a href="#contact">Contact</a></li>
         <li><a href="#contact">About us</a></li>
-        <!-- Add more sections as needed -->
       </ul>
     </nav>
   </div>
@@ -213,8 +238,7 @@
           <img src="Test.png" alt="Project 4">
           <h3>Project 4</h3>
         </a>
-      </div>      
-      <!-- Add more projects as needed -->
+      </div>
     </div>
   </div>
 </section>
@@ -224,11 +248,8 @@
     <h2>Contact Me</h2>
     <form method="post" action="send_message.php">
       <input type="text" name="name" placeholder="Your Name" required>
-      <br><br>
       <input type="email" name="email" placeholder="Your Email" required>
-      <br><br>
       <textarea name="message" placeholder="Your Message" rows="4" required></textarea>
-      <br><br>
       <button type="submit">Send Message</button>
     </form>
   </div>
@@ -236,6 +257,12 @@
 
 <footer>
   <div class="container">
+    <div class="social-icons">
+      <a href="https://www.facebook.com" target="_blank">Facebook</a>
+      <a href="https://www.twitter.com" target="_blank">Twitter</a>
+      <a href="https://www.linkedin.com" target="_blank">LinkedIn</a>
+      <a href="https://www.github.com" target="_blank">GitHub</a>
+    </div>
     <p>&copy; 2024 CYPRIEN. All rights reserved.</p>
   </div>
 </footer>
