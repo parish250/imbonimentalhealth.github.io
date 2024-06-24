@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="YANKURIJE CYPRIEN - UI/UX Designer Portfolio">
   <title>YANKURIJE CYPRIEN</title>
-  
   <style>
     /* Reset and basic styles */
     * {
@@ -114,6 +114,11 @@
       text-decoration: none;
     }
 
+    .project p {
+      padding: 15px;
+      color: #555;
+    }
+
     #about {
       background-color: #fff;
       padding: 40px 0;
@@ -132,6 +137,35 @@
       font-size: 1.2em;
       line-height: 1.8;
       color: #555;
+    }
+
+    #skills {
+      background-color: #f8f9fa;
+      padding: 40px 0;
+      text-align: center;
+    }
+
+    #skills h2 {
+      margin-bottom: 20px;
+      font-size: 2em;
+    }
+
+    #skills ul {
+      list-style-type: none;
+      padding: 0;
+      max-width: 600px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+    }
+
+    #skills ul li {
+      background-color: #343a40;
+      color: #fff;
+      padding: 10px 20px;
+      margin: 10px;
+      border-radius: 5px;
     }
 
     #contact {
@@ -215,17 +249,28 @@
       margin: 0;
     }
   </style>
+  <script>
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+  </script>
 </head>
 <body>
 
 <header>
   <div class="container">
     <h1>YANKURIJE CYPRIEN</h1>
-    <nav>
+    <nav role="navigation">
       <ul>
         <li><a href="#portfolio">Portfolio</a></li>
         <li><a href="#contact">Contact</a></li>
-        <li><a href="#about">About Us</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
       </ul>
     </nav>
   </div>
@@ -238,25 +283,29 @@
       <div class="project">
         <a href="portfolio/project1/project1.pdf" target="_blank" aria-label="Project 1">
           <img src="HOME.png" alt="Project 1">
-          <h3>Click here to see more about this project</h3>
+          <h3>Home Page Redesign</h3>
+          <p>A comprehensive redesign of an e-commerce homepage to improve user experience and increase conversion rates.</p>
         </a>
       </div>
       <div class="project">
         <a href="TechConnect.pdf" target="_blank" aria-label="Project 2">
           <img src="fk.png" alt="Project 2">
-          <h3>Project 2</h3>
+          <h3>TechConnect</h3>
+          <p>Developed a platform connecting tech enthusiasts with industry experts for networking and mentorship.</p>
         </a>
       </div>
       <div class="project">
         <a href="portfolio/project3/project3.pdf" target="_blank" aria-label="Project 3">
           <img src="Group.png" alt="Project 3">
-          <h3>Project 3</h3>
+          <h3>Group Collaboration Tool</h3>
+          <p>Designed a collaborative tool to enhance team productivity and streamline project management.</p>
         </a>
       </div>
       <div class="project">
         <a href="portfolio/project4/project4.pdf" target="_blank" aria-label="Project 4">
           <img src="Test.png" alt="Project 4">
-          <h3>Project 4</h3>
+          <h3>Testing Framework</h3>
+          <p>Created a comprehensive testing framework to ensure software reliability and performance.</p>
         </a>
       </div>
     </div>
@@ -269,6 +318,20 @@
     <p>
       Welcome to our website! We are a dedicated team of professionals committed to providing exceptional services and solutions. Our mission is to deliver high-quality products that meet the needs and expectations of our clients. With a strong focus on innovation and customer satisfaction, we strive to be leaders in our industry. Thank you for visiting our site, and we look forward to working with you!
     </p>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="container">
+    <h2>Skills</h2>
+    <ul>
+      <li>UI Design</li>
+      <li>UX Research</li>
+      <li>Prototyping</li>
+      <li>Adobe XD</li>
+      <li>Sketch</li>
+      <li>Figma</li>
+    </ul>
   </div>
 </section>
 
