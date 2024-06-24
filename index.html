@@ -37,11 +37,13 @@
       padding: 20px 0;
       text-align: center;
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      transition: background-color 0.3s ease;
     }
 
     header h1 {
       font-size: 2.5em;
       margin-bottom: 10px;
+      transition: color 0.3s ease;
     }
 
     nav ul {
@@ -54,6 +56,7 @@
     nav ul li {
       display: inline-block;
       margin-right: 20px;
+      transition: transform 0.3s ease;
     }
 
     nav ul li a {
@@ -70,12 +73,14 @@
     #portfolio {
       background-color: #fff;
       padding: 40px 0;
+      transition: background-color 0.3s ease;
     }
 
     #portfolio h2 {
       text-align: center;
       margin-bottom: 40px;
       font-size: 2em;
+      transition: color 0.3s ease;
     }
 
     .projects {
@@ -89,17 +94,23 @@
       margin: 20px;
       box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
       overflow: hidden;
-      transition: transform 0.3s ease;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
     .project:hover {
       transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
     }
 
     .project img {
       width: 100%;
       height: auto;
       display: block;
+      transition: transform 0.3s ease;
+    }
+
+    .project:hover img {
+      transform: scale(1.1);
     }
 
     .project h3 {
@@ -108,23 +119,35 @@
       padding: 15px 0;
       text-align: center;
       margin: 0;
+      transition: background-color 0.3s ease;
+    }
+
+    .project:hover h3 {
+      background-color: #555;
     }
 
     .project p {
       padding: 15px;
       color: #555;
+      transition: color 0.3s ease;
+    }
+
+    .project:hover p {
+      color: #777;
     }
 
     #about {
       background-color: #fff;
       padding: 40px 0;
       text-align: center;
+      transition: background-color 0.3s ease;
     }
 
     #about h2 {
       text-align: center;
       margin-bottom: 20px;
       font-size: 2em;
+      transition: color 0.3s ease;
     }
 
     #about p {
@@ -139,11 +162,13 @@
       background-color: #f8f9fa;
       padding: 40px 0;
       text-align: center;
+      transition: background-color 0.3s ease;
     }
 
     #skills h2 {
       margin-bottom: 20px;
       font-size: 2em;
+      transition: color 0.3s ease;
     }
 
     #skills ul {
@@ -165,18 +190,25 @@
       flex: 1 1 calc(33.333% - 40px);
       text-align: center;
       font-size: 1em;
+      transition: transform 0.3s ease;
+    }
+
+    #skills ul li:hover {
+      transform: translateY(-5px);
     }
 
     #contact {
       background-color: #f8f9fa;
       padding: 40px 0;
       text-align: center;
+      transition: background-color 0.3s ease;
     }
 
     #contact h2 {
       text-align: center;
       margin-bottom: 40px;
       font-size: 2em;
+      transition: color 0.3s ease;
     }
 
     #contact form {
@@ -197,11 +229,18 @@
       border: 1px solid #ccc;
       border-radius: 4px;
       font-size: 1em;
+      transition: border-color 0.3s ease;
     }
 
     #contact form textarea {
       resize: vertical;
       min-height: 150px;
+    }
+
+    #contact form input:focus,
+    #contact form textarea:focus {
+      outline: none;
+      border-color: #555;
     }
 
     #contact form button {
@@ -226,6 +265,7 @@
       width: 100%;
       box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
       flex-shrink: 0;
+      transition: background-color 0.3s ease;
     }
 
     footer .social-icons {
@@ -310,7 +350,7 @@
         });
       });
     });
-  </script>
+ 
 </head>
 <body>
 
