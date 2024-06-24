@@ -342,114 +342,88 @@
     }
   </style>
   <script>
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-          behavior: 'smooth'
+    document.addEventListener('DOMContentLoaded', function() {
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+          });
         });
       });
     });
- </script>
+  </script>
 </head>
 <body>
-
-<header>
-  <div class="container">
-    <h1>YANKURIJE CYPRIEN</h1>
-    <nav role="navigation">
-      <ul>
-        <li><a href="#portfolio">Portfolio</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#skills">Skills</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
-
-<section id="portfolio">
-  <div class="container">
+  <header>
+    <div class="container">
+      <h1>YANKURIJE CYPRIEN</h1>
+      <nav>
+        <ul>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  
+  <div id="portfolio" class="container">
     <h2>Portfolio</h2>
     <div class="projects">
       <div class="project">
-        <a href="portfolio/project1/project1.pdf" target="_blank" aria-label="Project 1">
-          <img src="HOME.png" alt="Project 1">
-          <h3>Home Page Redesign</h3>
-          <p>A comprehensive redesign of an e-commerce homepage to improve user experience and increase conversion rates.</p>
-        </a>
+        <img src="project1.jpg" alt="Project 1">
+        <h3>Project 1</h3>
+        <p>Short description of project 1.</p>
       </div>
       <div class="project">
-        <a href="TechConnect.pdf" target="_blank" aria-label="Project 2">
-          <img src="fk.png" alt="Project 2">
-          <h3>TechConnect</h3>
-          <p>Developed a platform connecting tech enthusiasts and professionals for networking and collaboration.</p>
-        </a>
-      </div>
-      <div class="project">
-        <a href="portfolio/project3/project3.pdf" target="_blank" aria-label="Project 3">
-          <img src="Group.png" alt="Project 3">
-          <h3>Community App</h3>
-          <p>Designed an app for community building and engagement, featuring forums, events, and group activities.</p>
-        </a>
-      </div>
-      <div class="project">
-        <a href="portfolio/project4/project4.pdf" target="_blank" aria-label="Project 4">
-          <img src="Test.png" alt="Project 4">
-          <h3>Testing Dashboard</h3>
-          <p>Created a dashboard for managing and visualizing test results, improving productivity and decision-making.</p>
-        </a>
+        <img src="project2.jpg" alt="Project 2">
+        <h3>Project 2</h3>
+        <p>Short description of project 2.</p>
       </div>
     </div>
   </div>
-</section>
-
-<section id="about">
-  <div class="container">
-    <h2>About Us</h2>
+  
+  <div id="about" class="container">
+    <h2>About Me</h2>
     <p>
-      Welcome to our website! We are a dedicated team of professionals committed to providing exceptional services and solutions. Our mission is to deliver high-quality products that meet the needs and expectations of our clients. With a strong focus on innovation and customer satisfaction, we strive to be leaders in our industry. Thank you for visiting our site, and we look forward to working with you!
+      Hi, I'm Yankurije Cyprien, a UI/UX Designer with a passion for creating beautiful and functional user experiences.
+      With a strong background in graphic design and web development, I bring a unique perspective to the design process.
     </p>
   </div>
-</section>
-
-<section id="skills">
-  <div class="container">
+  
+  <div id="skills" class="container">
     <h2>Skills</h2>
     <ul>
-      <li>UI Design</li>
-      <li>UX Research</li>
+      <li>UI/UX Design</li>
+      <li>Graphic Design</li>
+      <li>Web Development</li>
       <li>Prototyping</li>
-      <li>Adobe XD</li>
-      <li>Sketch</li>
-      <li>Figma</li>
+      <li>Wireframing</li>
+      <li>User Research</li>
     </ul>
   </div>
-</section>
-
-<section id="contact">
-  <div class="container">
-    <h2>Contact Me</h2>
-    <form method="post" action="send_message.php" aria-label="Contact Form">
-      <input type="text" name="name" placeholder="Your Name" required aria-label="Your Name">
-      <input type="email" name="email" placeholder="Your Email" required aria-label="Your Email">
-      <textarea name="message" placeholder="Your Message" rows="4" required aria-label="Your Message"></textarea>
+  
+  <div id="contact" class="container">
+    <h2>Contact</h2>
+    <form action="submit_form.php" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" placeholder="Your Message" required></textarea>
       <button type="submit">Send Message</button>
     </form>
   </div>
-</section>
-
-<footer>
-  <div class="container">
-    <div class="social-icons" aria-label="Social Media Links">
-      <a href="https://www.facebook.com" target="_blank" aria-label="Facebook">Facebook</a>
-      <a href="https://www.twitter.com" target="_blank" aria-label="Twitter">Twitter</a>
-      <a href="https://www.linkedin.com" target="_blank" aria-label="LinkedIn">LinkedIn</a>
-      <a href="https://www.github.com" target="_blank" aria-label="GitHub">GitHub</a>
+  
+  <footer>
+    <div class="container">
+      <div class="social-icons">
+        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+      </div>
+      <p>&copy; 2024 Yankurije Cyprien. All rights reserved.</p>
     </div>
-    <p>&copy; 2024 CYPRIEN. All rights reserved.</p>
-  </div>
-</footer>
-
+  </footer>
 </body>
 </html>
