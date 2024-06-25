@@ -53,10 +53,11 @@
       padding: 0;
       text-align: center;
       margin-top: 10px;
+      display: flex;
+      justify-content: center;
     }
 
     nav ul li {
-      display: inline-block;
       margin-right: 20px;
       animation: fadeInUp 1s ease-in-out;
     }
@@ -70,6 +71,34 @@
 
     nav ul li a:hover {
       color: #ffd700;
+    }
+
+    /* Mobile menu */
+    .menu-toggle {
+      display: none;
+      font-size: 2em;
+      cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+        margin-right: 20px;
+      }
+
+      nav ul {
+        flex-direction: column;
+        display: none;
+        width: 100%;
+      }
+
+      nav ul.showing {
+        display: block;
+      }
+
+      nav ul li {
+        margin: 10px 0;
+      }
     }
 
     #portfolio {
@@ -163,31 +192,30 @@
       animation: fadeIn 1s ease-in-out;
     }
 
-    #skills ul {
-      list-style-type: none;
-      padding: 0;
-      max-width: 800px;
-      margin: 0 auto;
+    .skill-cards {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
+      gap: 20px;
     }
 
-    #skills ul li {
+    .skill-card {
       background-color: #2c3e50;
       color: #fff;
-      padding: 10px 20px;
+      padding: 20px;
       margin: 10px;
       border-radius: 5px;
-      flex: 1 1 calc(33.333% - 40px);
+      width: calc(33.333% - 40px);
       text-align: center;
       font-size: 1em;
-      transition: transform 0.3s ease;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
       animation: fadeInUp 1s ease-in-out;
     }
 
-    #skills ul li:hover {
+    .skill-card:hover {
       transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
     }
 
     #contact {
@@ -297,12 +325,7 @@
         margin: 10px 0;
       }
 
-      #skills ul {
-        flex-direction: column;
-        align-items: center;
-      }
-
-      #skills ul li {
+      .skill-card {
         width: 80%;
       }
     }
@@ -371,6 +394,7 @@
   <header>
     <h1>YANKURIJE CYPRIEN</h1>
     <nav>
+      <span class="menu-toggle"><i class="fas fa-bars"></i></span>
       <ul>
         <li><a href="#portfolio">Portfolio</a></li>
         <li><a href="#about">About</a></li>
@@ -421,16 +445,16 @@
 
   <section id="skills" class="container">
     <h2>Skills</h2>
-    <ul>
-      <li>UI/UX Design</li>
-      <li>Web Development</li>
-      <li>Graphic Design</li>
-      <li>Prototyping</li>
-      <li>User Research</li>
-      <li>HTML/CSS</li>
-      <li>JavaScript</li>
-      <li>React</li>
-    </ul>
+    <div class="skill-cards">
+      <div class="skill-card">UI/UX Design</div>
+      <div class="skill-card">Web Development</div>
+      <div class="skill-card">Graphic Design</div>
+      <div class="skill-card">Prototyping</div>
+      <div class="skill-card">User Research</div>
+      <div class="skill-card">HTML/CSS</div>
+      <div class="skill-card">JavaScript</div>
+      <div class="skill-card">React</div>
+    </div>
   </section>
 
   <section id="contact" class="container">
@@ -454,6 +478,13 @@
   </footer>
 
   <script>
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navUl = document.querySelector('nav ul');
+
+    menuToggle.addEventListener('click', () => {
+      navUl.classList.toggle('showing');
+    });
+
     document.querySelector('form').addEventListener('submit', function(event) {
       event.preventDefault();
       document.getElementById('successMessage').style.display = 'block';
