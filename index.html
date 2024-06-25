@@ -345,88 +345,60 @@
       }
     }
   </style>
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-          e.preventDefault();
-          document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-          });
-        });
-      });
-    });
-  </script>
 </head>
 <body>
   <header>
-    <div class="container">
-      <h1>YANKURIJE CYPRIEN</h1>
-      <nav>
-        <ul>
-          <li><a href="#portfolio">Portfolio</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
-    </div>
+    <h1>YANKURIJE CYPRIEN</h1>
+    <nav>
+      <ul>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
   </header>
-  
-  <section id="portfolio">
-    <div class="container">
-      <h2>Portfolio</h2>
-      <div class="projects">
-        <div class="project">
-          <a href="portfolio/project1/project1.pdf" target="_blank">
-            <img src="HOME.png" alt="Project 1">
-            <h3>Project 1</h3>
-          </a>
-        </div>
-        <div class="project">
-          <a href="TechConnect.pdf" target="_blank">
-            <img src="fk.png" alt="Project 2">
-            <h3>Project 2</h3>
-          </a>
-        </div>
-        <div class="project">
-          <a href="portfolio/project3/project3.pdf" target="_blank">
-            <img src="Group.png" alt="Project 3">
-            <h3>Project 3</h3>
-          </a>
-        </div>
-        <div class="project">
-          <a href="portfolio/project4/project4.pdf" target="_blank">
-            <img src="Test.png" alt="Project 4">
-            <h3>Project 4</h3>
-          </a>
-        </div>      
-        <!-- Add more projects as needed -->
+
+  <section id="portfolio" class="container">
+    <h2>Portfolio</h2>
+    <div class="projects">
+      <div class="project">
+        <a href="portfolio/project1/project1.pdf" target="_blank">
+          <img src="HOME.png" alt="Project 1">
+          <h3>Project 1</h3>
+        </a>
+        <p>This project involved redesigning the home page for a major e-commerce site to improve user engagement and sales.</p>
+      </div>
+      <div class="project">
+        <a href="portfolio/project2/project2.pdf" target="_blank">
+          <img src="TASK 1.png" alt="Project 2">
+          <h3>Project 2</h3>
+        </a>
+        <p>This project focused on developing a task management application to enhance productivity for remote teams.</p>
       </div>
     </div>
   </section>
-  
-  <div id="about" class="container">
+
+  <section id="about" class="container">
     <h2>About Me</h2>
-    <p>
-      Hi, I'm Yankurije Cyprien, a UI/UX Designer with a passion for creating beautiful and functional user experiences.
-      With a strong background in graphic design and front-end development, I bring a unique perspective to the design process.
-    </p>
-  </div>
-  
-  <div id="skills" class="container">
+    <p>Hello, I'm YANKURIJE CYPRIEN, a passionate UI/UX designer with a keen eye for detail and a love for creating intuitive and engaging user experiences. With a background in graphic design and web development, I bring a unique blend of creativity and technical expertise to every project I undertake.</p>
+  </section>
+
+  <section id="skills" class="container">
     <h2>Skills</h2>
     <ul>
       <li>UI/UX Design</li>
+      <li>Web Development</li>
       <li>Graphic Design</li>
-      <li>Front-end Development</li>
       <li>Prototyping</li>
-      <li>Wireframing</li>
       <li>User Research</li>
+      <li>HTML/CSS</li>
+      <li>JavaScript</li>
+      <li>React</li>
     </ul>
-  </div>
-  
-  <div id="contact" class="container">
+  </section>
+
+  <section id="contact" class="container">
     <h2>Contact</h2>
     <form action="submit_form.php" method="POST">
       <input type="text" name="name" placeholder="Your Name" required>
@@ -434,19 +406,24 @@
       <textarea name="message" placeholder="Your Message" required></textarea>
       <button type="submit">Send Message</button>
     </form>
-  </div>
-  
+    <p id="successMessage" style="display:none;">Thank you! Your message has been sent.</p>
+  </section>
+
   <footer>
-    <div class="container">
-      <div class="social-icons">
-        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-        <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
-        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-      </div>
-      <p>&copy; 2024 Yankurije Cyprien. All rights reserved.</p>
+    <div class="social-icons">
+      <a href="https://github.com/yourusername" target="_blank"><i class="fab fa-github"></i></a>
+      <a href="https://linkedin.com/in/yourusername" target="_blank"><i class="fab fa-linkedin"></i></a>
+      <a href="https://twitter.com/yourusername" target="_blank"><i class="fab fa-twitter"></i></a>
     </div>
+    <p>&copy; 2023 YANKURIJE CYPRIEN. All rights reserved.</p>
   </footer>
+
+  <script>
+    document.querySelector('form').addEventListener('submit', function(event) {
+      event.preventDefault();
+      // Simulate form submission success
+      document.getElementById('successMessage').style.display = 'block';
+    });
+  </script>
 </body>
 </html>
