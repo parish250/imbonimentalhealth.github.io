@@ -25,6 +25,7 @@
             flex-direction: column;
             min-height: 100vh;
             overflow-x: hidden;
+            scroll-behavior: smooth; /* Smooth scrolling */
         }
 
         .container {
@@ -37,29 +38,46 @@
         header {
             background-color: #2c3e50;
             color: #fff;
-            padding: 20px;
-            text-align: center;
+            padding: 20px 40px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            position: relative;
+            text-align: center; /* Center-align header content */
+        }
+
+        header .logo {
+            display: inline-block;
+            text-align: center;
         }
 
         header h1 {
             font-size: 2.5em;
-            margin-bottom: 10px;
+            margin: 0;
             animation: fadeInDown 1s ease-in-out;
+        }
+
+        header p {
+            font-size: 1em;
+            margin: 0;
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 2em;
+            cursor: pointer;
         }
 
         nav ul {
             list-style-type: none;
             padding: 0;
-            text-align: center;
-            margin-top: 10px;
+            margin: 20px 0 0 0;
             display: flex;
-            justify-content: center;
+            justify-content: center; /* Center-align nav items */
+            gap: 20px;
+            animation: fadeInUp 1s ease-in-out;
         }
 
         nav ul li {
-            margin-right: 20px;
-            animation: fadeInUp 1s ease-in-out;
+            margin: 0;
         }
 
         nav ul li a {
@@ -73,22 +91,18 @@
             color: #ffd700;
         }
 
-        .menu-toggle {
-            display: none;
-            font-size: 2em;
-            cursor: pointer;
-        }
-
         @media (max-width: 768px) {
             .menu-toggle {
                 display: block;
-                margin-right: 20px;
             }
 
             nav ul {
                 flex-direction: column;
                 display: none;
                 width: 100%;
+                animation: none;
+                background-color: #2c3e50;
+                padding: 10px;
             }
 
             nav ul.showing {
@@ -106,6 +120,7 @@
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             text-align: center;
+            animation: fadeIn 1s ease-in-out;
         }
 
         .profile-pic {
@@ -217,6 +232,12 @@
             color: #555;
         }
 
+        @media (max-width: 768px) {
+            .project {
+                flex: 1 1 100%;
+            }
+        }
+
         #about {
             background-color: #fff;
             padding: 40px 0;
@@ -316,83 +337,90 @@
             width: 100%;
             padding: 10px;
             margin-bottom: 10px;
-            box-sizing: border-box;
-            border: 1px solid #ccc;
+            border: 1px solid #ddd;
             border-radius: 4px;
             font-size: 1em;
-            transition: border-color 0.3s ease;
-        }
-
-        #contact form textarea {
-            resize: vertical;
-            min-height: 150px;
         }
 
         #contact form input:focus,
         #contact form textarea:focus {
+            border-color: #00bfff;
             outline: none;
-            border-color: #555;
         }
 
         #contact form button {
             background-color: #2c3e50;
             color: #fff;
-            border: none;
             padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
             cursor: pointer;
             font-size: 1em;
-            border-radius: 4px;
             transition: background-color 0.3s ease;
         }
 
         #contact form button:hover {
-            background-color: #555;
+            background-color: #00bfff;
         }
 
         footer {
             background-color: #2c3e50;
             color: #fff;
+            padding: 20px 0;
             text-align: center;
-            padding: 10px;
-            margin-top: auto;
         }
 
         footer p {
             margin: 0;
         }
 
-        /* Keyframes for animations */
-        @keyframes fadeInDown {
-            from {
+        footer .social-icons {
+            margin: 10px 0;
+        }
+
+        footer .social-icons a {
+            color: #fff;
+            margin: 0 10px;
+            text-decoration: none;
+            font-size: 1.5em;
+            transition: color 0.3s ease;
+        }
+
+        footer .social-icons a:hover {
+            color: #00bfff;
+        }
+
+        @keyframes fadeIn {
+            0% {
                 opacity: 0;
-                transform: translateY(-20px);
             }
 
-            to {
+            100% {
                 opacity: 1;
-                transform: translateY(0);
             }
         }
 
         @keyframes fadeInUp {
-            from {
+            0% {
                 opacity: 0;
                 transform: translateY(20px);
             }
 
-            to {
+            100% {
                 opacity: 1;
                 transform: translateY(0);
             }
         }
 
-        @keyframes fadeIn {
-            from {
+        @keyframes fadeInDown {
+            0% {
                 opacity: 0;
+                transform: translateY(-20px);
             }
 
-            to {
+            100% {
                 opacity: 1;
+                transform: translateY(0);
             }
         }
     </style>
@@ -400,113 +428,121 @@
 
 <body>
     <header>
-        <div class="menu-toggle" aria-label="Menu toggle"><i class="fas fa-bars" aria-hidden="true"></i></div>
-        <h1>YANKURIJE CYPRIEN</h1>
-        <nav>
-            <ul>
-                <li><a href="#portfolio">Portfolio</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
+        <div class="container">
+            <div class="logo">
+                <h1>YANKURIJE CYPRIEN</h1>
+                <p>UI/UX Designer</p>
+            </div>
+            <div class="menu-toggle" aria-label="Toggle navigation menu"><i class="fas fa-bars"></i></div>
+            <nav>
+                <ul>
+                    <li><a href="#profile" role="button">Profile</a></li>
+                    <li><a href="#portfolio" role="button">Portfolio</a></li>
+                    <li><a href="#about" role="button">About</a></li>
+                    <li><a href="#skills" role="button">Skills</a></li>
+                    <li><a href="#contact" role="button">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
     <div class="container">
-        <section class="profile-section" aria-labelledby="profile-heading">
-            
-            <img src="cy.jpeg" alt="Profile Picture of YANKURIJE CYPRIEN" class="profile-pic">
-         
-            <p class="highlight">UI/UX Designer</p>
-            <p>I am a passionate and experienced UI/UX designer dedicated to creating user-friendly and visually appealing designs. With a strong background in graphic design and a keen eye for detail, I aim to enhance user experiences through innovative design solutions.</p>
+        <section id="profile" class="profile-section">
+            <img src="cy.jpeg" alt="Profile Picture" class="profile-pic">
+            <h1>Hello, I'm <span class="highlight">YANKURIJE CYPRIEN</span></h1>
+            <p>A passionate UI/UX designer with over 10 years of experience in creating engaging and user-friendly designs. I strive to make the web a better place through my creative and innovative solutions.</p>
         </section>
 
-        <section id="portfolio" aria-labelledby="portfolio-heading">
-            <h2 id="portfolio-heading">Portfolio</h2>
+        <section id="portfolio">
+            <h2>Portfolio</h2>
             <div class="projects">
                 <div class="project">
-                    <img src="HOME.png" alt="Project 1">
+                    <img src="Test.png" alt="Project 1">
                     <h3>Project 1</h3>
-                    <p>Project 1 description goes here.</p>
+                    <p>Brief description of the project.</p>
                 </div>
                 <div class="project">
-                    <img src="fk.png" alt="Project 2">
+                    <img src="Test.png" alt="Project 2">
                     <h3>Project 2</h3>
-                    <p>Project 2 description goes here.</p>
+                    <p>Brief description of the project.</p>
                 </div>
                 <div class="project">
-                    <img src="Test.png" alt="Project 3">
+                    <img src="Group.png" alt="Project 3">
                     <h3>Project 3</h3>
-                    <p>Project 3 description goes here.</p>
+                    <p>Brief description of the project.</p>
                 </div>
                 <div class="project">
                     <img src="Group.png" alt="Project 4">
                     <h3>Project 4</h3>
-                    <p>Project 4 description goes here.</p>
+                    <p>Brief description of the project.</p>
                 </div>
             </div>
         </section>
 
-        <section id="about" aria-labelledby="about-heading">
-            <h2 id="about-heading">About Me</h2>
-            <p>I am YANKURIJE CYPRIEN, a UI/UX designer with a deep passion for creating seamless and engaging user experiences. With years of experience in the field, I have honed my skills in graphic design, interaction design, and user research. My goal is to craft intuitive and aesthetically pleasing designs that meet both user needs and business goals.</p>
+        <section id="about">
+            <h2>About Me</h2>
+            <p>I am a UI/UX designer based in Rwanda with a keen eye for detail and a passion for creating intuitive and aesthetically pleasing designs. Over the years, I have worked with various clients and companies, helping them transform their ideas into reality. My design process is user-centered, ensuring that every project I work on meets the needs of its users while also achieving business goals.</p>
         </section>
 
-        <section id="skills" aria-labelledby="skills-heading">
-            <h2 id="skills-heading">Skills</h2>
+        <section id="skills">
+            <h2>Skills</h2>
             <div class="skill-cards">
-                <div class="skill-card" aria-label="Skill: Adobe XD">
-                    <h3>Adobe XD</h3>
-                    <p>Proficient in Adobe XD for creating interactive prototypes and wireframes.</p>
+                <div class="skill-card">
+                    <h3>UI Design</h3>
+                    <p>Creating visually appealing and user-friendly interfaces.</p>
                 </div>
-                <div class="skill-card" aria-label="Skill: Sketch">
-                    <h3>Sketch</h3>
-                    <p>Experienced in using Sketch for vector graphic design and UI/UX design.</p>
+                <div class="skill-card">
+                    <h3>UX Research</h3>
+                    <p>Conducting research to understand user needs and behaviors.</p>
                 </div>
-                <div class="skill-card" aria-label="Skill: Figma">
-                    <h3>Figma</h3>
-                    <p>Skilled in Figma for collaborative design and prototyping.</p>
+                <div class="skill-card">
+                    <h3>Prototyping</h3>
+                    <p>Building interactive prototypes to test and refine designs.</p>
                 </div>
-                <div class="skill-card" aria-label="Skill: HTML & CSS">
-                    <h3>HTML & CSS</h3>
-                    <p>Strong foundation in HTML and CSS for building and styling web pages.</p>
+                <div class="skill-card">
+                    <h3>Wireframing</h3>
+                    <p>Developing wireframes to outline the structure of websites and apps.</p>
                 </div>
-                <div class="skill-card" aria-label="Skill: JavaScript">
-                    <h3>JavaScript</h3>
-                    <p>Knowledgeable in JavaScript for adding interactive elements to web pages.</p>
+                <div class="skill-card">
+                    <h3>Interaction Design</h3>
+                    <p>Designing engaging and intuitive user interactions.</p>
                 </div>
-                <div class="skill-card" aria-label="Skill: User Research">
-                    <h3>User Research</h3>
-                    <p>Experienced in conducting user research to inform design decisions.</p>
+                <div class="skill-card">
+                    <h3>Visual Design</h3>
+                    <p>Creating stunning visual elements and graphics.</p>
                 </div>
             </div>
         </section>
 
-        <section id="contact" aria-labelledby="contact-heading">
-            <h2 id="contact-heading">Contact</h2>
-            <form aria-labelledby="contact-form">
-                <input type="text" name="name" placeholder="Your Name" required aria-label="Your Name">
-                <input type="email" name="email" placeholder="Your Email" required aria-label="Your Email">
-                <textarea name="message" placeholder="Your Message" required aria-label="Your Message"></textarea>
+        <section id="contact">
+            <h2>Contact Me</h2>
+            <form>
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
                 <button type="submit">Send Message</button>
             </form>
         </section>
     </div>
-      <footer>
-    <div class="social-icons">
-      <a href="https://github.com/parish250" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-      <a href="https://linkedin.com/in/cyprien-yankurije-98219b21a" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-      <a href="https://twitter.com/yourusername" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-      <a href="https://instagram.com/yourusername" target="_blank" aria-label="Twitter"><i class="fab fa-instagram"></i></a>
-      <a href="https://facebook.com/" target="_blank" aria-label="Twitter"><i class="fab fa-facebook"></i></a>
-      <a href="https://youtube.com/parish rezane" target="_blank" aria-label="Twitter"><i class="fab fa-youtube"></i></a>
-    </div>
-    <p>&copy; 2024 YANKURIJE CYPRIEN. All rights reserved.</p>
-  </footer>
+    <footer>
+        <p>&copy; 2024 YANKURIJE CYPRIEN. All rights reserved.</p>
+        <div class="social-icons">
+            <a href="https://twitter.com/yourprofile" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.linkedin.com/in/yourprofile" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/yourprofile" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+             <a href="https://instagram.com/yourprofile" target="_blank" aria-label="GitHub"><i class="fab fa-instagram"></i></a>
+              <a href="https://facebook.com/yourprofile" target="_blank" aria-label="GitHub"><i class="fab fa-bacebook"></i></a>
+        </div>
+    </footer>
+
     <script>
-        document.querySelector('.menu-toggle').addEventListener('click', function () {
-            document.querySelector('nav ul').classList.toggle('showing');
+        const menuToggle = document.querySelector('.menu-toggle');
+        const nav = document.querySelector('nav ul');
+
+        menuToggle.addEventListener('click', () => {
+            nav.classList.toggle('showing');
         });
     </script>
 </body>
 
 </html>
+
