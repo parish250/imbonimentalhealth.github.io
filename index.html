@@ -528,15 +528,15 @@
                 </div>
             </div>
         </section>
-<section id="contact">
-    <h2>Contact Me</h2>
-    <form id="contact-form" action="https://formspree.io/f/xeojjwqe" method="POST">
-        <input type="text" name="name" placeholder="Your Name" required>
-        <input type="email" name="email" placeholder="Your Email" required>
-        <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-        <button type="submit">Send Message</button>
-    </form>
-</section>
+ <section id="contact">
+            <h2>Contact Me</h2>
+            <form id="contact-form">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="_replyto" placeholder="Your Email" required>
+                <textarea name="message" placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
     </div>
     <footer>
         <p>&copy; 2024 YANKURIJE CYPRIEN. All rights reserved.</p>
@@ -549,12 +549,50 @@
             <a href="https://www.youtube.com/channel/UCViFdos4tRLO2qD10ka0iqQ" target="_blank"><i class="fab fa-youtube"></i></a>
     </footer>
 
-    <script>
+ <script>
         const menuToggle = document.querySelector('.menu-toggle');
         const nav = document.querySelector('nav ul');
 
         menuToggle.addEventListener('click', () => {
             nav.classList.toggle('showing');
+        });
+
+        // Add smooth scrolling to all links
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        document.querySelector('#contact-form').addEventListener('submit', async function (e) {
+            e.preventDefault();
+
+            const form = e.target;
+            const formData = new FormData(form);
+
+            try {
+                const response = await fetch('https://formspree.io/f/xeojjwqe', {
+                    method: 'POST',
+                    headers: {
+                        'Accept': 'application/json'
+                    },
+                    body: formData
+                });
+
+                if (response.ok) {
+                    alert('Your message was sent successfully!');
+                    form.reset();
+                    window.location.href = 'index.html'; // Redirect to main page after form submission
+                } else {
+                    alert('There was a problem sending your message. Please try again.');
+                }
+            } catch (error) {
+                alert('There was an error sending your message. Please try again.');
+            }
         });
     </script>
 </body>
