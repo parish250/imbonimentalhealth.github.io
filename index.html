@@ -4,316 +4,129 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="YANKURIJE CYPRIEN - UI/UX Designer Portfolio">
-    <title>YANKURIJE CYPRIEN - UI/UX Designer</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">  
+    <title>Imboni Mental Health Hub</title>
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
-    <link rel="icon" type="image/png" sizes="32x32" href="YC.png">
-<link rel="icon" type="image/png" sizes="16x16" href="YC.png">
-</head>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
     <style>
-        /* Reset and basic styles */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
+        /* General Styling */
         body {
             font-family: Arial, sans-serif;
             line-height: 1.6;
-            background-color: #f7f7f7;
-            color: #333;
+            background-color: #f0f4f8;
+            color: #2c3e50;
             margin: 0;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-            overflow-x: hidden;
-            scroll-behavior: smooth; /* Smooth scrolling */
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-            flex: 1;
+            padding: 0;
         }
 
         header {
-            background-color: #400d40;
-            color: #fff;
-            padding: 20px 40px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-            position: relative;
-            text-align: center; /* Center-align header content */
-        }
-
-        header .logo {
-            display: inline-block;
+            background-color: #34495e;
+            color: #ecf0f1;
+            padding: 20px 0;
             text-align: center;
-        }
-
-        header h1 {
-            font-size: 2.5em;
-            margin: 0;
-            animation: fadeInDown 1s ease-in-out;
-        }
-
-        header p {
-            font-size: 1em;
-            margin: 0;
-        }
-
-        .menu-toggle {
-            display: none;
-            font-size: 2em;
-            cursor: pointer;
         }
 
         nav ul {
-            list-style-type: none;
+            list-style: none;
             padding: 0;
-            margin: 20px 0 0 0;
+            margin: 0;
             display: flex;
-            justify-content: center; /* Center-align nav items */
-            gap: 20px;
-            animation: fadeInUp 1s ease-in-out;
+            justify-content: center;
         }
 
         nav ul li {
-            margin: 0;
+            margin: 0 15px;
         }
 
         nav ul li a {
-            color: #fff;
+            color: #ecf0f1;
             text-decoration: none;
-            font-size: 1.2em;
-            transition: color 0.3s ease;
+            font-weight: bold;
+            transition: color 0.3s;
         }
 
         nav ul li a:hover {
-            color: #ffd700;
+            text-decoration: underline;
+            color: #1abc9c;
         }
 
-        @media (max-width: 768px) {
-            .menu-toggle {
-                display: block;
-            }
-
-            nav ul {
-                flex-direction: column;
-                display: none;
-                width: 100%;
-                animation: none;
-                background-color: #2c3e50;
-                padding: 10px;
-            }
-
-            nav ul.showing {
-                display: block;
-            }
-
-            nav ul li {
-                margin: 10px 0;
-            }
-        }
-
-        .profile-section {
-            background-color: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            animation: fadeIn 1s ease-in-out;
-        }
-
-        .profile-pic {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            margin-bottom: 20px;
-            color: red;
-        }
-
-        .profile-section h1 {
-            font-size: 2em;
-            color: #333;
-              border-color: red
-        }
-
-        .highlight {
-            color: #00bfff;
-        }
-
-        .profile-section p {
-            font-size: 1em;
-            color: #555;
-            margin-bottom: 20px;
-        }
-
-        .timeline {
+        .hero {
+            background: url('C:/Users/user/Desktop/1.jpg') no-repeat center center/cover;
+            height: 600px;
             display: flex;
-            justify-content: space-between;
+            flex-direction: column;
             align-items: center;
-            margin-bottom: 40px;
-        }
-
-        .timeline-item {
-            text-align: center;
-            flex: 1;
-        }
-
-        .timeline-item img {
-            width: 80px;
-            height: auto;
-            margin-bottom: 10px;
-        }
-
-        .timeline-item p {
-            font-size: 0.9em;
-            color: #777;
-        }
-
-        .timeline-item span {
-            display: block;
-            font-size: 0.8em;
-            color: #aaa;
-            margin-top: 5px;
-        }
-
-        #portfolio {
-            background-color: #fff;
-            padding: 40px 0;
-        }
-
-        #portfolio h2 {
-            text-align: center;
-            margin-bottom: 40px;
-            font-size: 2em;
-            animation: fadeIn 1s ease-in-out;
-        }
-
-        .projects {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-        }
-
-        .project {
-            flex: 1 1 calc(50% - 40px);
-            margin: 20px;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            animation: fadeInUp 1s ease-in-out;
-        }
-
-        .project:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-        }
-
-        .project img {
-            width: 100%;
-            height: auto;
-            display: block;
-            transition: transform 0.3s ease;
-        }
-
-        .project:hover img {
-            transform: scale(1.05);
-        }
-
-        .project h3 {
-            background-color: #2c3e50;
-            color: #fff;
-            padding: 15px 0;
-            text-align: center;
-            margin: 0;
-            transition: background-color 0.3s ease;
-        }
-
-        .project p {
-            padding: 15px;
-            color: #555;
-        }
-
-        @media (max-width: 768px) {
-            .project {
-                flex: 1 1 100%;
-            }
-        }
-
-        #about {
-            background-color: #fff;
-            padding: 40px 0;
-            text-align: center;
-        }
-
-        #about h2 {
-            margin-bottom: 20px;
-            font-size: 2em;
-            animation: fadeIn 1s ease-in-out;
-        }
-
-        #about p {
-            max-width: 800px;
-            margin: 0 auto;
-            font-size: 1.2em;
-            line-height: 1.8;
-            color: #555;
-            padding: 0 20px;
-            animation: fadeInUp 1s ease-in-out;
-        }
-
-        #skills {
-            background-color: #f0f2f5;
-            padding: 40px 0;
-            text-align: center;
-        }
-
-        #skills h2 {
-            margin-bottom: 20px;
-            font-size: 2em;
-            animation: fadeIn 1s ease-in-out;
-        }
-
-        .skill-cards {
-            display: flex;
-            flex-wrap: wrap;
             justify-content: center;
-            gap: 20px;
-        }
-
-        .skill-card {
-            background-color: #2c3e50;
-            color: #fff;
-            padding: 20px;
-            margin: 10px;
-            border-radius: 5px;
-            width: calc(33.333% - 40px);
             text-align: center;
-            font-size: 1em;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-            animation: fadeInUp 1s ease-in-out;
+            color: #ffffff;
+            padding: 20px;
+            background-blend-mode: overlay;
         }
 
-        .skill-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            color: #ecf0f1;
         }
 
-        @media (max-width: 768px) {
-            .skill-card {
-                width: calc(50% - 20px);
-            }
+        .hero p {
+            font-size: 24px;
+            margin-bottom: 30px;
+            max-width: 600px;
+            background-color: rgba(52, 73, 94, 0.7);
+            padding: 15px;
+            border-radius: 5px;
         }
 
-        @media (max-width: 480px) {
-            .skill-card {
-                width: 100%;
-            }
+        .cta-button {
+            background-color: #1abc9c;
+            color: #ffffff;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 18px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .cta-button:hover {
+            background-color: #16a085;
+        }
+
+        .sections {
+            padding: 40px 20px;
+            text-align: center;
+            background-color: #ecf0f1;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .sections h2 {
+            margin-bottom: 10px;
+            font-size: 28px;
+            color: #34495e;
+        }
+
+        .sections p {
+            margin-bottom: 20px;
+            font-size: 18px;
+            color: #7f8c8d;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .sections a {
+            color: #1abc9c;
+            text-decoration: none;
+            font-weight: bold;
+            transition: outline 0.3s, text-decoration 0.3s;
+        }
+
+        .sections a:hover,
+        .sections a:focus {
+            outline: 2px solid #1abc9c;
+            text-decoration: underline;
         }
 
         #contact {
@@ -355,7 +168,7 @@
         }
 
         #contact form button {
-            background-color: #400d40;
+            background-color: #1abc9c;
             color: #fff;
             padding: 10px 20px;
             border: none;
@@ -366,12 +179,12 @@
         }
 
         #contact form button:hover {
-            background-color: #00bfff;
+            background-color: #16a085;
         }
 
         footer {
-            background-color: #400d40;
-            color: #fff;
+            background-color: #34495e;
+            color: #ecf0f1;
             padding: 20px 0;
             text-align: center;
         }
@@ -417,118 +230,66 @@
                 transform: translateY(0);
             }
         }
-
-        @keyframes fadeInDown {
-            0% {
-                opacity: 0;
-                transform: translateY(-20px);
-            }
-
-            100% {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
     </style>
 </head>
 
 <body>
     <header>
-        <div class="container">
-            <div class="logo">
-                <h3>YANKURIJE CYPRIEN</h3>
-                <p>UI/UX Designer</p>
-            </div>
-            <div class="menu-toggle" aria-label="Toggle navigation menu"><i class="fas fa-bars"></i></div>
-            <nav>
-                <ul>
-                    <li><a href="#profile" role="button">Profile</a></li>
-                    <li><a href="#portfolio" role="button">Portfolio</a></li>
-                    <li><a href="#about" role="button">About</a></li>
-                    <li><a href="#skills" role="button">Skills</a></li>
-                    <li><a href="#contact" role="button">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
+        <nav>
+            <ul>
+                <li><a href="#imboni-library">Imboni Library</a></li>
+                <li><a href="#imboni-special-room">Imboni Special Room</a></li>
+                <li><a href="#imboni-guest-house">Imboni Guest House</a></li>
+                <li><a href="#imboni-relax-site">Imboni Relax Site</a></li>
+                <li><a href="#imboni-girls-children">Imboni for Girls & Children</a></li>
+                <li><a href="#about-us">About Us</a></li>
+                <li><a href="#contact-form">Contact Us</a></li>
+            </ul>
+        </nav>
     </header>
-    <div class="container">
-        <section id="profile" class="profile-section">
-            <img src="cy.jpeg" alt="Profile Picture" class="profile-pic">
-            <h3>Hello, I'm <span class="highlight">YANKURIJE CYPRIEN</span></h3>
-            <p>An aspiring UI/UX designer with a strong passion for creating engaging and user-friendly designs. I always put the user front and center.</p>
-<p>I am committed to making a positive impact on the web through innovative solutions and a deep understanding of user needs.</p>
-        </section>
 
-        <section id="portfolio">
-    <h2>Portfolio</h2>
-    <div class="projects">
-        <div class="project">
-            <a href="TechConnect.pdf" target="_blank">
-                <img src="Test.png" alt="Project 1">
-            </a>
-            <h3>Project 1</h3>
-            <p>this project aims to help user book the UI/X Designer .</p>
-        </div>
-        <div class="project">
-            <a href="TechConnect.pdf" target="_blank">
-                <img src="fk.png" alt="Project 2">
-            </a>
-            <h3>Project 2</h3>
-            <p>this project aimed to facilitate learner to Foster collaboration among the learners. i used figma to design high fidelity wireframe and prototype</p>
-        </div>
-        <div class="project">
-            <a href="TechConnect.pdf" target="_blank">
-                <img src="Group.png" alt="Project 3">
-            </a>
-            <h3>Project 3</h3>
-            <p>CreativeTech Solution developed a platform to help users easily book UI/UX designers. The platform features designer profiles with portfolios, a simple booking process, and a secure payment system, connecting clients with top-tier designers for high-quality design solutions.</p>
-        </div>
-        <div class="project">
-            <a href="path/to/your/pdf-file.pdf" target="_blank">
-                <img src="HOME.png" alt="Project 4">
-            </a>
-            <h3>Project 4</h3>
-            <p>Brief description of the project.</p>
-        </div>
-    </div>
-</section>
+    <section class="hero">
+        <h1>Your Path to Recovery Begins Here</h1>
+        <p>We provide a supportive community and expert guidance to help you overcome alcohol addiction. Explore our resources and connect with professionals who care.</p>
+        <a href="#imboni-library" class="cta-button">Get Started</a>
+    </section>
 
+    <section class="sections" id="imboni-library">
+        <h2>Imboni Library</h2>
+        <p>Explore powerful stories and testimonies from those who have successfully overcome alcohol addiction. Gain strength from their experiences and start your journey to recovery.</p>
+        <a href="#imboni-library">Learn More &rarr;</a>
+    </section>
 
-        <section id="about">
-            <h2>About Me</h2>
-            <p>I am a UI/UX designer based in Rwanda with a keen eye for detail and a passion for creating intuitive and aesthetically pleasing designs. Over the years, I have worked with various clients and companies, helping them transform their ideas into reality. My design process is user-centered, ensuring that every project I work on meets the needs of its users while also achieving business goals.</p>
-        </section>
+    <section class="sections" id="imboni-special-room">
+        <h2>Imboni Special Room</h2>
+        <p>Need someone to talk to? Our clinical psychologists are here to provide free, confidential counseling to help you navigate your challenges.</p>
+        <a href="#imboni-special-room">Book a Session &rarr;</a>
+    </section>
 
-        <section id="skills">
-            <h2>Skills</h2>
-            <div class="skill-cards">
-                <div class="skill-card">
-                    <h3>UI Design</h3>
-                    <p>Creating visually appealing and user-friendly interfaces.</p>
-                </div>
-                <div class="skill-card">
-                    <h3>UX Research</h3>
-                    <p>Conducting research to understand user needs and behaviors.</p>
-                </div>
-                <div class="skill-card">
-                    <h3>Prototyping</h3>
-                    <p>Building interactive prototypes to test and refine designs.</p>
-                </div>
-                <div class="skill-card">
-                    <h3>Wireframing</h3>
-                    <p>Developing wireframes to outline the structure of websites and apps.</p>
-                </div>
-                <div class="skill-card">
-                    <h3>Interaction Design</h3>
-                    <p>Designing engaging and intuitive user interactions.</p>
-                </div>
-                <div class="skill-card">
-                    <h3>Visual Design</h3>
-                    <p>Creating stunning visual elements and graphics.</p>
-                </div>
-            </div>
-        </section>
- <section id="contact">
+    <section class="sections" id="imboni-guest-house">
+        <h2>Imboni Guest House</h2>
+        <p>For ongoing support, our guest house offers regular follow-ups and referrals. Ensure your recovery is guided by experts, with services tailored to your needs.</p>
+        <a href="#imboni-guest-house">Find Out More &rarr;</a>
+    </section>
+
+    <section class="sections" id="imboni-relax-site">
+        <h2>Imboni Relax Site</h2>
+        <p>Join our online meetings where you can speak with experts, share your experiences, and learn from others who are on the same journey.</p>
+        <a href="#imboni-relax-site">Join a Meeting &rarr;</a>
+    </section>
+
+    <section class="sections" id="imboni-girls-children">
+        <h2>Imboni for Girls & Children</h2>
+        <p>We offer a dedicated, toll-free service for girls and children struggling with alcohol addiction. Get immediate help from our compassionate team.</p>
+        <a href="#imboni-girls-children">Get Help Now &rarr;</a>
+    </section>
+
+    <section id="about-us" class="sections">
+        <h2>About Us</h2>
+        <p>Imboni Mental Health Hub is committed to helping individuals overcome alcohol addiction through accessible, professional support. Learn more about our mission and how we can assist you.</p>
+    </section>
+
+   <section id="contact">
             <h2>Contact Me</h2>
             <form id="contact-form">
                 <input type="text" name="name" placeholder="Your Name" required>
@@ -539,7 +300,7 @@
         </section>
     </div>
     <footer>
-        <p>&copy; 2024 YANKURIJE CYPRIEN. All rights reserved.</p><hr><br>
+        <p>&copy; 2024 Imboni Mental Health Hub.</p><hr><br>
         <div class="social-icons">
             <a href="https://twitter.com/@Parish_yc" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
             <a href="https://www.linkedin.com/in/cyprien-yankurije-98219b21a" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
@@ -548,8 +309,7 @@
               <a href="https://facebook.com/yankurije.cyprien?mibextid=ZbWKwL" target="_blank" aria-label="facebook"><i class="fab fa-facebook"></i></a>
             <a href="https://www.youtube.com/channel/UCViFdos4tRLO2qD10ka0iqQ" target="_blank"><i class="fab fa-youtube"></i></a>
     </footer>
-
- <script>
+<script>
         const menuToggle = document.querySelector('.menu-toggle');
         const nav = document.querySelector('nav ul');
 
