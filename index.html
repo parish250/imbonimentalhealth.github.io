@@ -19,10 +19,11 @@
         }
 
         header {
-            background-color: #34495e;
-            color: #ecf0f1;
-            padding: 20px 0;
+            background-color: #3e065f;
+            color: #fff;
+            padding: 15px;
             text-align: center;
+            position: relative;
         }
 
         nav ul {
@@ -30,11 +31,12 @@
             padding: 0;
             margin: 0;
             display: flex;
+            flex-wrap: wrap;
             justify-content: center;
         }
 
         nav ul li {
-            margin: 0 15px;
+            margin: 0 10px;
         }
 
         nav ul li a {
@@ -50,8 +52,8 @@
         }
 
         .hero {
-            background: url('1.jpg') no-repeat center center/cover;
-            height: 600px;
+             background: url('1.jpg') no-repeat center center/cover;
+            height: 100vh;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -63,15 +65,15 @@
         }
 
         .hero h1 {
-            font-size: 48px;
+            font-size: 4em;
             margin-bottom: 20px;
             color: #ecf0f1;
         }
 
         .hero p {
-            font-size: 24px;
+            font-size: 1.5em;
             margin-bottom: 30px;
-            max-width: 600px;
+            max-width: 90%;
             background-color: rgba(52, 73, 94, 0.7);
             padding: 15px;
             border-radius: 5px;
@@ -83,7 +85,7 @@
             padding: 15px 30px;
             text-decoration: none;
             border-radius: 5px;
-            font-size: 18px;
+            font-size: 1.2em;
             font-weight: bold;
             transition: background-color 0.3s;
         }
@@ -103,15 +105,15 @@
 
         .sections h2 {
             margin-bottom: 10px;
-            font-size: 28px;
+            font-size: 2em;
             color: #34495e;
         }
 
         .sections p {
             margin-bottom: 20px;
-            font-size: 18px;
+            font-size: 1.2em;
             color: #7f8c8d;
-            max-width: 800px;
+            max-width: 90%;
             margin-left: auto;
             margin-right: auto;
         }
@@ -131,7 +133,7 @@
 
         #contact {
             background-color: #f0f2f5;
-            padding: 40px 0;
+            padding: 40px 20px;
             text-align: center;
         }
 
@@ -142,7 +144,9 @@
         }
 
         #contact form {
-            max-width: 600px;
+            max-width: 100%;
+            width: 100%;
+            box-sizing: border-box;
             margin: 0 auto;
             background-color: #fff;
             padding: 20px;
@@ -153,7 +157,7 @@
 
         #contact form input,
         #contact form textarea {
-            width: 100%;
+            width: calc(100% - 22px);
             padding: 10px;
             margin-bottom: 10px;
             border: 1px solid #ddd;
@@ -182,9 +186,9 @@
             background-color: #16a085;
         }
 
-        footer {
-            background-color: #34495e;
-            color: #ecf0f1;
+      footer {
+            background-color: #3e065f;
+            color: #fff;
             padding: 20px 0;
             text-align: center;
         }
@@ -194,7 +198,7 @@
         }
 
         footer .social-icons {
-            margin: 10px 0;
+            margin: 15px 0;
         }
 
         footer .social-icons a {
@@ -206,7 +210,7 @@
         }
 
         footer .social-icons a:hover {
-            color: #00bfff;
+            color: #5f27cd;
         }
 
         @keyframes fadeIn {
@@ -230,6 +234,62 @@
                 transform: translateY(0);
             }
         }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5em;
+            }
+
+            .hero p {
+                font-size: 1em;
+            }
+
+            .cta-button {
+                font-size: 1em;
+            }
+
+            nav ul {
+                flex-direction: column;
+            }
+
+            nav ul li {
+                margin: 10px 0;
+            }
+
+            .sections h2 {
+                font-size: 1.5em;
+            }
+
+            .sections p {
+                font-size: 1em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 1.8em;
+            }
+
+            .hero p {
+                font-size: 0.9em;
+            }
+
+            .cta-button {
+                font-size: 0.9em;
+                padding: 10px 20px;
+            }
+
+            #contact form input,
+            #contact form textarea {
+                width: calc(100% - 18px);
+                font-size: 0.9em;
+            }
+
+            #contact form button {
+                font-size: 0.9em;
+                padding: 8px 16px;
+            }
+        }
     </style>
 </head>
 
@@ -237,12 +297,11 @@
     <header>
         <nav>
             <ul>
-                
-                <li><a href="#Imboni-Mental-Health-Hub">Imboni Mental Health Hub</a></li>
-                <li><a href="#imboni-library">Library</a></li>
-                <li><a href="#imboni-special-room">Special Room</a></li>
-                <li><a href="#imboni-guest-house">House</a></li>
-                <li><a href="#imboni-relax-site">Relax Site</a></li>
+                <li><a href="#imboni-library">IMBONI MENTAL HEALTH HUB</a></li>
+                <li><a href="#imboni-library"> Library</a></li>
+                <li><a href="#imboni-special-room"> Special Room</a></li>
+                <li><a href="#imboni-guest-house"> Guest House</a></li>
+                <li><a href="#imboni-relax-site"> Relax Site</a></li>
                 <li><a href="#imboni-girls-children">Girls & Children</a></li>
                 <li><a href="#about-us">About Us</a></li>
                 <li><a href="#contact-form">Contact Us</a></li>
@@ -263,25 +322,25 @@
     </section>
 
     <section class="sections" id="imboni-special-room">
-        <h2>Imboni Special Room</h2>
+        <h2>Special Room</h2>
         <p>Need someone to talk to? Our clinical psychologists are here to provide free, confidential counseling to help you navigate your challenges.</p>
         <a href="#imboni-special-room">Book a Session &rarr;</a>
     </section>
 
     <section class="sections" id="imboni-guest-house">
-        <h2>Imboni Guest House</h2>
+        <h2> Guest House</h2>
         <p>For ongoing support, our guest house offers regular follow-ups and referrals. Ensure your recovery is guided by experts, with services tailored to your needs.</p>
         <a href="#imboni-guest-house">Find Out More &rarr;</a>
     </section>
 
     <section class="sections" id="imboni-relax-site">
-        <h2>Imboni Relax Site</h2>
+        <h2> Relax Site</h2>
         <p>Join our online meetings where you can speak with experts, share your experiences, and learn from others who are on the same journey.</p>
         <a href="#imboni-relax-site">Join a Meeting &rarr;</a>
     </section>
 
     <section class="sections" id="imboni-girls-children">
-        <h2>Imboni for Girls & Children</h2>
+        <h2>Girls & Children</h2>
         <p>We offer a dedicated, toll-free service for girls and children struggling with alcohol addiction. Get immediate help from our compassionate team.</p>
         <a href="#imboni-girls-children">Get Help Now &rarr;</a>
     </section>
@@ -291,35 +350,30 @@
         <p>Imboni Mental Health Hub is committed to helping individuals overcome alcohol addiction through accessible, professional support. Learn more about our mission and how we can assist you.</p>
     </section>
 
-   <section id="contact">
-            <h2>Contact Me</h2>
-            <form id="contact-form">
-                <input type="text" name="name" placeholder="Your Name" required>
-                <input type="email" name="_replyto" placeholder="Your Email" required>
-                <textarea name="message" placeholder="Your Message" required></textarea>
-                <button type="submit">Send Message</button>
-            </form>
-        </section>
-    </div>
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <form id="contact-form">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="_replyto" placeholder="Your Email" required>
+            <textarea name="message" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
     <footer>
-        <p>&copy; 2024 Imboni Mental Health Hub.</p><hr><br>
+        <p>&copy; 2024 Imboni Mental Health Hub.</p>
         <div class="social-icons">
             <a href="https://twitter.com/@Parish_yc" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
             <a href="https://www.linkedin.com/in/cyprien-yankurije-98219b21a" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
             <a href="https://github.com/parish250" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-             <a href="https://instagram.com/parish_yc?igsh=MWxtY2pjMXl6dGs5dg==" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-              <a href="https://facebook.com/yankurije.cyprien?mibextid=ZbWKwL" target="_blank" aria-label="facebook"><i class="fab fa-facebook"></i></a>
-            <a href="https://www.youtube.com/channel/UCViFdos4tRLO2qD10ka0iqQ" target="_blank"><i class="fab fa-youtube"></i></a>
+            <a href="https://instagram.com/parish_yc?igsh=MWxtY2pjMXl6dGs5dg==" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://facebook.com/yankurije.cyprien?mibextid=ZbWKwL" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.youtube.com/channel/UCViFdos4tRLO2qD10ka0iqQ" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        </div>
     </footer>
-<script>
-        const menuToggle = document.querySelector('.menu-toggle');
-        const nav = document.querySelector('nav ul');
 
-        menuToggle.addEventListener('click', () => {
-            nav.classList.toggle('showing');
-        });
-
-        // Add smooth scrolling to all links
+    <script>
+        // Smooth scrolling for navigation links
         document.querySelectorAll('nav a').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
@@ -330,6 +384,7 @@
             });
         });
 
+        // Contact form submission
         document.querySelector('#contact-form').addEventListener('submit', async function (e) {
             e.preventDefault();
 
@@ -348,7 +403,6 @@
                 if (response.ok) {
                     alert('Your message was sent successfully!');
                     form.reset();
-                    window.location.href = 'index.html'; // Redirect to main page after form submission
                 } else {
                     alert('There was a problem sending your message. Please try again.');
                 }
