@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IMboni Mental Health - Donate</title>
+    <link rel="stylesheet" href="stylee.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo">IMboni</div>
+            <div class="menu-icon" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul id="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li class="dropdown">
+                    <a href="services.html" class="dropbtn">Services</a>
+                    <div class="dropdown-content">
+                        <a href="addictions.html"><i class="fas fa-wine-bottle"></i> Addiction Services</a>
+                        <a href="mental-health.html"><i class="fas fa-brain"></i> Mental Health</a>
+                        <a href="services.html#counseling"><i class="fas fa-heart"></i> Counseling</a>
+                        <a href="services.html#psychotherapy"><i class="fas fa-user-md"></i> Psychotherapy</a>
+                        <a href="services.html#gbv-support"><i class="fas fa-shield-alt"></i> GBV Support</a>
+                        <a href="services.html#teenage-pregnancy"><i class="fas fa-baby"></i> Teenage Pregnancy</a>
+                        <a href="services.html#women-youth-empowerment"><i class="fas fa-fist-raised"></i> Women & Youth Empowerment</a>
+                        <a href="services.html#climate-mental-health"><i class="fas fa-tree"></i> Climate & Mental Health</a>
+                        <a href="services.html#advocacy-awareness"><i class="fas fa-bullhorn"></i> Advocacy & Awareness</a>
+                        <a href="services.html#referral-services"><i class="fas fa-hands-helping"></i> Referral Services</a>
+                        <a href="services.html#screening-tools"><i class="fas fa-stethoscope"></i> Screening Tools</a>
+                        <a href="services.html#outreach-programs"><i class="fas fa-users"></i> Outreach Programs</a>
+                    </div>
+                </li>
+                <li><a href="resource.html">Resources</a></li>
+                <li><a href="get-involved.html">Get Involved</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="donate.html">Donate</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="donate">
+        <h1>Donate Now. Make an Impact.</h1>
+        <p>Consider a generous gift and share the impact today.</p>
+        <form id="donation-form" class="donate-form">
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="first-name">First Name</label>
+                    <input type="text" id="first-name" name="first-name" placeholder="Enter your first name" required>
+                </div>
+                <div class="form-group">
+                    <label for="last-name">Last Name</label>
+                    <input type="text" id="last-name" name="last-name" placeholder="Enter your last name" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="address">Address</label>
+                    <input type="text" id="address" name="address" placeholder="Enter your street address" required>
+                </div>
+                <div class="form-group">
+                    <label for="city">City/Suburb</label>
+                    <input type="text" id="city" name="city" placeholder="Enter your city or suburb" required>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="state">State</label>
+                    <input type="text" id="state" name="state" placeholder="Enter your state" required>
+                </div>
+                <div class="form-group">
+                    <label for="zip">Zip/Post Code</label>
+                    <input type="text" id="zip" name="zip" placeholder="Enter your zip or post code" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="country">Country</label>
+                <select id="country" name="country" required>
+                    <option value="">Select your country</option>
+                    <!-- Country options go here -->
+                    <option value="AF">Afghanistan</option>
+                    <option value="AL">Albania</option>
+                    <!-- Add other countries here -->
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Donation Amount</label>
+                <div class="donation-amounts">
+                    <!-- Donation amount options go here -->
+                    <label>
+                        <input type="radio" name="amount" value="10">$10
+                    </label>
+                    <label>
+                        <input type="radio" name="amount" value="20">$20
+                    </label>
+                    <label>
+                        <input type="radio" name="amount" value="50">$50
+                    </label>
+                    <label>
+                        <input type="radio" name="amount" value="100">$100
+                    </label>
+                    <label>
+                        <input type="radio" name="amount" value="other">Other
+                    </label>
+                    <input type="number" id="other-amount" name="other-amount" placeholder="Enter other amount" style="display: none;">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="payment-method">How would you like to donate?</label>
+                <select id="payment-method" name="payment-method" required>
+                    <option value="credit-card">Credit Card</option>
+                    <option value="mobile-money">Mobile Money</option>
+                    <option value="bank-transfer">Bank Transfer</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="donation-type">Type of Donation</label>
+                <select id="donation-type" name="donation-type" required>
+                    <option value="one-time">One-Time</option>
+                    <option value="monthly">Monthly</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="notes">Feedback, Notes, or Specific Instructions</label>
+                <textarea id="notes" name="notes" rows="4" placeholder="Add any feedback, notes, or specific instructions here"></textarea>
+                 
+                <button type="submit" form="donation-form" class="cta-button">Submit Donation</button>
+            </div>
+
+           
+        </form>
+    </section>
+
+    
+            
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="contact-info">
+                <p><strong>Contact Us:</strong></p>
+                <p>Phone: +250789294965 / +250780657185</p>
+                <p>Email: imbonimentalhealthub@gmail.com</p>
+                <p>Website: ImboniMentalHealth.org</p>
+                <p>Address: Southern Province, Nyanza District</p>
+            </div>
+            <div class="social-icons">
+                <p>Follow us on:</p>
+                <a href="https://twitter.com/@MfuraEmma20" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.linkedin.com/in/cyprien-yankurije-98219b21a" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/parish250" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://instagram.com/parish_yc?igsh=MWxtY2pjMXl6dGs5dg==" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://facebook.com/yankurije.cyprien?mibextid=ZbWKwL" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.youtube.com/channel/UCViFdos4tRLO2qD10ka0iqQ" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+        <hr>
+        <p>&copy; 2025 IMboni Mental Health hub. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const navLinks = document.getElementById('nav-links');
+            navLinks.classList.toggle('active');
+        }
+
+        window.addEventListener('resize', () => {
+            const navLinks = document.getElementById('nav-links');
+            if (window.innerWidth > 768) {
+                navLinks.classList.remove('active');
+            }
+        });
+
+        // Show/hide other amount input based on selected donation amount
+        document.querySelectorAll('input[name="amount"]').forEach((elem) => {
+            elem.addEventListener("change", function(event) {
+                const otherAmountInput = document.getElementById("other-amount");
+                if (event.target.value === "other") {
+                    otherAmountInput.style.display = "block";
+                } else {
+                    otherAmountInput.style.display = "none";
+                    otherAmountInput.value = "";
+                }
+            });
+        });
+
+        // Preview Donation
+        function previewDonation() {
+            const form = document.getElementById('donation-form');
+            const previewContent = document.getElementById('preview-content');
+            const formData = new FormData(form);
+            let previewHtml = '';
+
+            for (let [key, value] of formData.entries()) {
+                if (key === 'amount' && value === 'other') {
+                    value = formData.get('other-amount');
+                }
+                previewHtml += `<p><strong>${key.replace(/-/g, ' ')}: </strong>${value}</p>`;
+            }
+
+            previewContent.innerHTML = previewHtml;
+            document.getElementById('preview-modal').style.display = 'block';
+        }
+
+        // Close Preview
+        function closePreview() {
+            document.getElementById('preview-modal').style.display = 'none';
+        }
+
+        // Edit Donation
+        function editDonation() {
+            closePreview();
+            document.getElementById('donation-form').scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+</body>
+
+</html>
