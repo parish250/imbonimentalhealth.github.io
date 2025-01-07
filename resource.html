@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IMboni Mental Health</title>
+    <title>IMboni Mental Health - Resources</title>
     <link rel="stylesheet" href="stylee.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
 </head>
@@ -20,7 +20,7 @@
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About Us</a></li>
                 <li class="dropdown">
-                    <a href="services.html" class="dropbtn">Services</a>
+                    <a href="addiction-services.html" class="dropbtn">Services</a>
                     <div class="dropdown-content">
                         <a href="addictions.html"><i class="fas fa-wine-bottle"></i> Addiction Services</a>
                         <a href="mental-health.html"><i class="fas fa-brain"></i> Mental Health</a>
@@ -43,39 +43,30 @@
         </nav>
     </header>
 
-    <section class="hero">
-        <h1>Your Path to Recovery Begins Here</h1>
-        <p>We provide a supportive community and expert guidance to help you overcome mental health and addiction challenges. Explore our resources and connect with professionals who care.</p>
-        <a href="#support" class="cta-button">Get Support Now</a>
-        <a href="donate.html" class="cta-button">Donate</a>
-    </section>
-
-    <section class="slideshow">
-        <div class="slides">
-            <div class="slide fade">
-                <img src="bk.jpg" alt="Journey to Recovery">
-                <div class="text">Step 1: Recognize the need for help</div>
+    <section class="resources">
+        <h1>Mental Health Resources</h1>
+        <p>Explore our collection of resources to support your mental health and wellbeing.</p>
+        <div class="resource-list">
+            <div class="resource-item">
+                <h2>Articles</h2>
+                <p>Read our informative articles on various mental health topics.</p>
+                <a href="articles.html" class="cta-button">Read Articles</a>
             </div>
-            <div class="slide fade">
-                <img src="bg.jpg" alt="Counseling">
-                <div class="text">Step 2: Seek counseling and support</div>
+            <div class="resource-item">
+                <h2>Videos</h2>
+                <p>Watch videos from mental health professionals and experts.</p>
+                <a href="videos.html" class="cta-button">Watch Videos</a>
             </div>
-            <div class="slide fade">
-                <img src="bk.jpg" alt="Community Support">
-                <div class="text">Step 3: Join a supportive community</div>
+            <div class="resource-item">
+                <h2>Podcasts</h2>
+                <p>Listen to podcasts on mental health and wellness.</p>
+                <a href="podcasts.html" class="cta-button">Listen to Podcasts</a>
             </div>
-            <div class="slide fade">
-                <img src="bg.jpg" alt="Recovery">
-                <div class="text">Step 4: Embrace recovery</div>
+            <div class="resource-item">
+                <h2>Guides</h2>
+                <p>Download guides and toolkits to help manage your mental health.</p>
+                <a href="guides.html" class="cta-button">Download Guides</a>
             </div>
-        </div>
-        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-        <a class="next" onclick="plusSlides(1)">&#10095;</a>
-        <div class="dot-container">
-            <span class="dot" onclick="currentSlide(1)"></span>
-            <span class="dot" onclick="currentSlide(2)"></span>
-            <span class="dot" onclick="currentSlide(3)"></span>
-            <span class="dot" onclick="currentSlide(4)"></span>
         </div>
     </section>
 
@@ -113,35 +104,6 @@
                 navLinks.classList.remove('active');
             }
         });
-
-        // Slideshow functionality
-        let slideIndex = 0;
-        showSlides();
-
-        function showSlides() {
-            let i;
-            let slides = document.getElementsByClassName("slide");
-            let dots = document.getElementsByClassName("dot");
-            for (i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";  
-            }
-            slideIndex++;
-            if (slideIndex > slides.length) {slideIndex = 1}    
-            for (i = 0; i < dots.length; i++) {
-                dots[i].className = dots[i].className.replace(" active", "");
-            }
-            slides[slideIndex-1].style.display = "block";  
-            dots[slideIndex-1].className += " active";
-            setTimeout(showSlides, 5000); // Change image every 5 seconds
-        }
-
-        function plusSlides(n) {
-            showSlides(slideIndex += n);
-        }
-
-        function currentSlide(n) {
-            showSlides(slideIndex = n);
-        }
     </script>
 </body>
 
