@@ -1,9 +1,4 @@
-/* Ensure the html and body take up the full height of the viewport */
-html, body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-}
+
 
 body {
     display: flex;
@@ -19,8 +14,6 @@ body {
 }
 
 /* Other styles... */
-
-
 
 body {
     font-family: Arial, sans-serif;
@@ -328,7 +321,7 @@ ul li {
     margin-right: 10px;
 }
 
-
+/* Slideshow styles */
 .slideshow {
     position: relative;
     max-width: 100%;
@@ -338,13 +331,15 @@ ul li {
 
 .slides {
     display: flex;
-    flex-wrap: nowrap;
+    transition: transform 1s ease-in-out;
 }
 
 .slide {
     display: none;
     flex: 1 0 100%;
     position: relative;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
 }
 
 .slide img {
@@ -374,7 +369,7 @@ ul li {
     color: white;
     font-weight: bold;
     font-size: 18px;
-    transition: 0.6s ease;
+    transition: background-color 0.6s ease;
     border-radius: 0 3px 3px 0;
     user-select: none;
 }
@@ -386,6 +381,27 @@ ul li {
 
 .prev:hover, .next:hover {
     background-color: rgba(0, 0, 0, 0.8);
+}
+
+.dot-container {
+    text-align: center;
+    padding: 20px;
+    background-color: #f1f1f1;
+}
+
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+    background-color: #717171;
 }
 
 footer {
