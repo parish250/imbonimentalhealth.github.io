@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IMboni Mental Health - Videos</title>
+    <link rel="stylesheet" href="stylee.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo">IMboni</div>
+            <div class="menu-icon" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul id="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">Services</a>
+                    <div class="dropdown-content">
+                        <a href="addiction-services.html"><i class="fas fa-wine-bottle"></i> Addiction Services</a>
+                        <a href="mental-health.html"><i class="fas fa-brain"></i> Mental Health</a>
+                        <a href="counseling.html"><i class="fas fa-heart"></i> Counseling</a>
+                        <a href="psychotherapy.html"><i class="fas fa-user-md"></i> Psychotherapy</a>
+                        <a href="gbv-support.html"><i class="fas fa-shield-alt"></i> GBV Support</a>
+                        <a href="teenage-pregnancy.html"><i class="fas fa-baby"></i> Teenage Pregnancy</a>
+                        <a href="women-youth-empowerment.html"><i class="fas fa-fist-raised"></i> Women & Youth Empowerment</a>
+                        <a href="climate-mental-health.html"><i class="fas fa-tree"></i> Climate & Mental Health</a>
+                        <a href="advocacy-awareness.html"><i class="fas fa-bullhorn"></i> Advocacy & Awareness</a>
+                        <a href="referral-services.html"><i class="fas fa-hands-helping"></i> Referral Services</a>
+                        <a href="screening-tools.html"><i class="fas fa-stethoscope"></i> Screening Tools</a>
+                        <a href="outreach-programs.html"><i class="fas fa-users"></i> Outreach Programs</a>
+                    </div>
+                </li>
+                <li><a href="resource.html">Resources</a></li>
+                <li><a href="get-involved.html">Get Involved</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="resource-content">
+        <h1>Videos</h1>
+        <p>Watch videos from mental health professionals and experts to learn more about mental wellness.</p>
+        <div class="videos-list">
+            <!-- Example of a video item -->
+            <div class="video-item">
+                <h2>Managing Stress</h2>
+                <p>Discover techniques to manage and reduce stress.</p>
+                <a href="video1.html" class="cta-button">Watch Now</a>
+            </div>
+            <!-- Add more video items as needed -->
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="contact-info">
+                <p><strong>Contact Us:</strong></p>
+                <p>Phone: +250789294965 / +250780657185</p>
+                <p>Email: imbonimentalhealthub@gmail.com</p>
+                <p>Address: Southern Province, Nyanza District</p>
+            </div>
+            <div class="social-icons">
+                <p>Follow us on:</p>
+                <a href="https://twitter.com/@MfuraEmma20" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.linkedin.com/in/cyprien-yankurije-98219b21a" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/parish250" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://instagram.com/parish_yc?igsh=MWxtY2pjMXl6dGs5dg==" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://facebook.com/yankurije.cyprien?mibextid=ZbWKwL" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.youtube.com/channel/UCViFdos4tRLO2qD10ka0iqQ" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+        <hr>
+        <p>&copy; 2025 IMboni Mental Health. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const navLinks = document.getElementById('nav-links');
+            navLinks.classList.toggle('active');
+        }
+
+        window.addEventListener('resize', () => {
+            const navLinks = document.getElementById('nav-links');
+            if (window.innerWidth > 768) {
+                navLinks.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+
+</html>
